@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% block title %}Home Page{% endblock title %}
+{% block body %}
+
+{% comment %} <h2>Home<h2> {% endcomment %}
+  <center>
+  <button class ="btn btn-primary myform "  id = "createtodobutton" ONCLICK="show()">Create Todo</button>
+  </center>
+<div id = "createtodo" style = "display: none;">
+<h3 class = "text-info">Hey {{user.username}}! </h3>
+<h4>Let's Create Your Todo For The Day<h4>
+<div class = "myform">
+<center>
+<form  method = "post" action =" {% url 'home' %}" >
+    <div class="form-group ">
+        {% csrf_token %}
+    {{form}}
+    </div>
+    <div class="form-group">
+    <button type="submit" class="btn btn-info">Create</button>
+  </form>
+
+  <br>
+</center>
+</div>
+</div>
+{% for todo in Todos %}
+<div class = "myform">
+<h4>
+    Your Pending Todos
+</h4>
+</center>
+<ul class="list-group">
+  <li class="list-group-item border border-secondary">  {{todo.title}} {{todo.date}}<a href="{% url 'delete' todo.id %} "> <i class = "material-icons">delete</i></a></li>
+    
+</ul>
+{% endfor %}
+
+</div>
+{% endblock body %}
+

@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+{% block title %}Signup Page{% endblock title %}
+{% block body %}
+
+
+
+<div class="alert alert-danger" role="alert">
+    {{UserExistsError}}
+    {{error}}
+  </div>
+<h2 class ="text-success"> Signup Page</h2>
+<form class = "myform" action = "{% url 'usersignup' %}" method ="post">
+    <div class="form-group">
+    {% csrf_token %}
+<table>
+    {{form.as_table}}
+    
+</table>
+<button class = "btn btn-primary"type="submit">Submit</button>
+</div>
+</form>
+
+{% endblock body %}
+

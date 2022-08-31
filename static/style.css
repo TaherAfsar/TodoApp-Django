@@ -1,0 +1,30 @@
+.material-icons{
+    float: right;
+    color: red;
+}
+h3{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+h4{
+    text-align: center;
+}
+.myform{
+    max-width: 500px;
+    margin: 10px auto;
+}
+
+.button{
+    margin: 10px auto;
+}
+.alert{
+    text-align: center;
+}
+ul{
+    display: none;
+}
+.createtodo{
+    display: none;
+}
