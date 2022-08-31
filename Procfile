@@ -1,1 +1,1 @@
-web: gunicorn todolist.wsgi 
+web: gunicorn todolist.wsgi -b xx.xxx.xxx.xx:8000
